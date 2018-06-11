@@ -8,22 +8,43 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+```matlab
+toda = '[sqrt((x(1,:)-th(1)).^2+(x(2,:)-th(2)).^2);sqrt((x(1,:)-th(3)).^2+(x(2,:)-th(4)).^2) - sqrt((x(1,:)-th(5)).^2+(x(2,:)-th(6)).^2)]';
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+% toa = exsensor('toa',1,1);
+% tdoa = exsensor('tdoa2',3,1)
+% s = addsensor(toa,tdoa)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+s = sensormod(toda,[2 0 2 6])
+s.th = [0,1000 , -1000,0 , 1000,0]
+s.x0 = [1 1]
+s.pe = [16 0;0 32];
 
-[Link](url) and ![Image](src)
+%%
+% figure
+% s.plot
+
+
+fs = 1/(ex1_t(2)-ex1_t(1));
+y = sig(ex1_y',fs);
+
+X = zeros(length(ex1_y),2);
+P = zeros(length(ex1_y),2,2);
+for i=1:length(ex1_y)
+    temp = estimate(s,y(i),'thmask',[0 0 0 0 0 0]);
+    X(i,:) = temp.x0';
+    P(i,:,:) = cov(temp.px0);
+end
+%%
+
+xhat = sig(ex1_y',fs,[],X, zeros(length(ex1_y),2,2), P)
+figure
+% hold on
+% s.plot
+xplot2(xhat)
+
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
