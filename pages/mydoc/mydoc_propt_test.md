@@ -64,7 +64,7 @@ title('Bang-Bang Free Time control');
 
 #### Output
 
-```matlab
+```
 Run tomlablic to display license information
 Done with setting TOMLAB paths
 Problem type appears to be: lpcon
