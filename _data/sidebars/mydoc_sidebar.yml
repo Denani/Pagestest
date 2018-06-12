@@ -24,7 +24,7 @@ entries:
     folderitems:
 
     - title: PROPT test
-      url: /index.html
+      url: /mydoc_propt_test.html
       output: web, pdf
       type: homepage
 
