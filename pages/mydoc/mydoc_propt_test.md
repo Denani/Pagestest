@@ -16,7 +16,8 @@ $J=t_F$
 And so on
 
 #### Matlab code
-'''matlab
+
+```matlab
 %% Problem setup
 toms t
 toms t_f
@@ -59,10 +60,11 @@ subplot(2,1,2)
 plot(t,u,'+-');
 legend('u');
 title('Bang-Bang Free Time control');
-'''
+```
 
 #### Output
-'''matlab
+
+```matlab
 Run tomlablic to display license information
 Done with setting TOMLAB paths
 Problem type appears to be: lpcon
@@ -82,4 +84,4 @@ Optimality conditions satisfied
 
 FuncEv    1 ConstrEv  526 ConJacEv  526 Iter  136 MinorIter  185
 CPU time: 0.740000 sec. Elapsed time: 1.280843 sec.
-'''
+```
