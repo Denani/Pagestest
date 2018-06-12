@@ -23,15 +23,14 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: PROPT test
-      url: /mydoc_propt_test.html
-      output: web, pdf
-      type: homepage
-
     - title: Get started
       url: /index.html
       output: web, pdf
       type: homepage
+
+    - title: PROPT test
+      url: /mydoc_propt_test.html
+      output: web, pdf
 
     - title: Introduction
       url: /mydoc_introduction.html
